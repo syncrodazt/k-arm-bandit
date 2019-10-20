@@ -1,4 +1,8 @@
 
+// for (let i = 0; i < numberOfActions; i++) {
+//     $("#btn" + i).click(function () { show(i) })
+// }
+
 $("#btn1").click(function () { show(0.8, 15, 99, 1) })
 $("#btn2").click(function () { show(0.7, 7, 9, 2) })
 $("#btn3").click(function () { show(1, 21, 0, 3) })
@@ -36,7 +40,7 @@ var values = [[10, 20, 13], [80, 3], [9, 67]]
 var numberOfActions = probs.length
 
 var actions = new Array()
-for (i = 0; i < numberOfActions; i++) {
+for (let i = 0; i < numberOfActions; i++) {
     var action = new Array()
     var numberOfValues = values[i].length
     for (j = 0; j < numberOfActions; j++) {
@@ -44,3 +48,9 @@ for (i = 0; i < numberOfActions; i++) {
     }
     actions.push(action)
 }
+
+$("input.fixed").eq(0).val(math.multiply(probs[0], values[0]))
+$("input.fixed").eq(1).val(math.multiply(probs[1], values[1]))
+$("input.fixed").eq(2).val(math.multiply(probs[2], values[2]))
+
+Ns = new Array(numberOfActions).fill(0)
