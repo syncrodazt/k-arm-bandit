@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="styles.css">
 
     <title>Bandit</title>
@@ -18,7 +18,7 @@
 <body>
     <div>
 
-        <h1><span>Turn(10) : </span><span id="turn">1</span></h1>
+        <h1><span>T : </span><span id="turn">1</span></h1>
         <p>This is a paragraph</p>
 
         <div class="container">
@@ -48,14 +48,30 @@
         </div>
 
         <div>
-            <p>Total : <span id="total">0</span></p>
+            <p>Total Reward : <span id="total">0</span></p>
+            <p>Average Reward : <span id="average">0</span></p>
+            <p>Average Reward Array : <span id="averageArray">[]</span></p>
         </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-md-8">
+                    One of two columns <br>
+                    <canvas id="myChart"></canvas>
+
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+
 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -63,12 +79,15 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- Mathjax --> 
+    <!-- Mathjax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Mathjs --> 
+    <!-- Mathjs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
     <script src="chance.min.js"></script>
 
