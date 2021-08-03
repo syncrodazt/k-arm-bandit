@@ -18,31 +18,35 @@
 <body>
     <div>
 
-        <h1><span>T : </span><span id="turn">1</span></h1>
-        <p>This is a paragraph</p>
-
+        <h1>Multi-armed Bandit Problem</h1>
+        <h3><span>T : </span><span id="turn">1</span></h3>
+        <h3>\(\varepsilon =\) <input type="text" id="epsilon" value=0></h3>
+        
         <div class="container">
             <div class="row">
                 <div class="col-sm">
                     One of three columns <br>
                     <button id="btn1">Button 1</button> <br>
-                    <span id="out1">OUT</span> <br>
+                    <span class="BIG" id="out1">OUT</span> <br>
                     \(q_{*}(a_{1}) =\) <input type="text" class="fixed"> <br>
                     \(\mathbb{E}[R_{t}|A_{t}=a_{1}] =\) <input type="text" class="estimate" value=0>
+                    \(N_{1} =\) <input type="text" class="n" value=0>
                 </div>
                 <div class="col-sm">
                     One of three columns <br>
                     <button id="btn2">Button 2</button> <br>
-                    <span id="out2">OUT</span> <br>
+                    <span class="BIG" id="out2">OUT</span> <br>
                     \(q_{*}(a_{2}) =\) <input type="text" class="fixed"> <br>
                     \(\mathbb{E}[R_{t}|A_{t}=a_{2}] =\) <input type="text" class="estimate" value=0>
+                    \(N_{2} =\) <input type="text" class="n" value=0>
                 </div>
                 <div class="col-sm">
                     One of three columns <br>
                     <button id="btn3">Button 3</button> <br>
-                    <span id="out3">OUT</span> <br>
+                    <span class="BIG" id="out3">OUT</span> <br>
                     \(q_{*}(a_{3}) =\) <input type="text" class="fixed"> <br>
                     \(\mathbb{E}[R_{t}|A_{t}=a_{3}] =\) <input type="text" class="estimate" value=0>
+                    \(N_{s} =\) <input type="text" class="n" value=0>
                 </div>
             </div>
         </div>

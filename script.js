@@ -1,10 +1,10 @@
 
-var epsilon = 0.3
+var epsilon = 0.1
 var rewardSum = 0
 var averageReward = 0
 var averageRewards = new Array()
 var turn_count = 1
-var turn_max = 3000
+var turn_max = 300
 var probs = [[0.2, 0.5, 0.3], [0.1, 0.9], [0.7, 0.3]]
 var rewards = [[10, 20, 13], [80, 3], [9, 67]]
 var numberOfActions = probs.length
@@ -87,6 +87,8 @@ for (let i = 0; i < numberOfActions; i++) {
     $("input.fixed").eq(i).val(math.multiply(probs[i], rewards[i]))
 }
 
+$("input#epsilon").val(epsilon)
+
 Ns = new Array(numberOfActions).fill(0)
 Qs = Array(3).fill().map(() => Math.random())
 
@@ -114,6 +116,8 @@ function show(i) {
     $("#turn").text(turn_count)
 
     Ns[i]++
+    $("input.n").eq(i).val(Ns[i])
+
     let Qn = Number($("input.estimate").eq(i).val())
     Qnplus1 = Qn + (reward - Qn) / Ns[i]
     Qs[i] = Qnplus1
@@ -123,15 +127,19 @@ function show(i) {
 }
 
 var epsilon_count = 0
-// for (let i = 0; i < turn_max; i++) {
-//     if (chance.bool({ likelihood: (1 - epsilon) * 100 })) {
-//         selectedAction = Qs.indexOf(Math.max(...Qs));
-//         $("#btn" + (selectedAction + 1)).trigger("click")
-//     } else {
-//         $("#btn" + (math.randomInt(numberOfActions) + 1)).trigger("click")
-//         epsilon_count++
-//     }
-// }
+function train() {
+    for (let i = 0; i < turn_max; i++) {
+        if (chance.bool({ likelihood: (1 - epsilon) * 100 })) {
+            selectedAction = Qs.indexOf(Math.max(...Qs));
+            $("#btn" + (selectedAction + 1)).trigger("click")
+        } else {
+            $("#btn" + (math.randomInt(numberOfActions) + 1)).trigger("click")
+            epsilon_count++
+        }
+    }
+}
+
+train()
 
 updateChart()
 console.log(epsilon_count)
